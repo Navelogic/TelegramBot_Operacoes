@@ -14,7 +14,7 @@ bot.start(async ctx =>{
 
  bot.on('text',async ctx =>{
   const celsius = ctx.update.message.text;
-  const valor = celsius.replace(/[^0-9]/g,'');
+  const valor = celsius.replace(/[^0-9,-]/g,'');
   const calculo = ((valor)*9/5) + 32;
   const celsiusParaFahrenheit = calculo.toLocaleString('pt-BR');
   ctx.reply(celsiusParaFahrenheit);
