@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Navelogic/TelegramBot_Operacoes#readme",
   "dependencies": {
+    "nodemon": "^2.0.20",
     "telegraf": "^4.9.2"
   }
 }
