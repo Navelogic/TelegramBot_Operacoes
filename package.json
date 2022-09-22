@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Navelogic/TelegramBot_Operacoes/issues"
   },
-  "homepage": "https://github.com/Navelogic/TelegramBot_Operacoes#readme"
+  "homepage": "https://github.com/Navelogic/TelegramBot_Operacoes#readme",
+  "dependencies": {
+    "telegraf": "^4.9.2"
+  }
 }
