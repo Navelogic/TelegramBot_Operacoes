@@ -11,9 +11,11 @@ bot.start(async ctx =>{
 
  await ctx.replyWithHTML(`Olá <b>${userName}</b>. Eu sou o <b>CALCULATOR</b>, um bot de formas matemáticas!`);
  await ctx.reply(`Vamos começar fazendo uma conversão de Celsius para Fahrenheit!`);
+
  bot.on('text',async ctx =>{
   const celsius = ctx.update.message.text;
-  const calculo = ((celsius)*9/5) + 32;
+  const valor = celsius.replace(/[^0-9]/g,'');
+  const calculo = ((valor)*9/5) + 32;
   const celsiusParaFahrenheit = calculo.toLocaleString('pt-BR');
   ctx.reply(celsiusParaFahrenheit);
  });
