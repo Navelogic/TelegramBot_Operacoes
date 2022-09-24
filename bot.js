@@ -33,100 +33,97 @@ ctx.replyWithHTML(`
 `);
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Operações
+
+// Celsius Para Fahrenheit
 function celsiusParaFahrenheit (celsius) {
   let valor = celsius.replace(/[^0-9,-]/g,'');
   let calculo = (((valor)*9/5) + 32);
   return calculo;
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Operações
-
 bot.hears(/Celsius_Para_Fahrenheit/i, async ctx => {
   await ctx.reply('Digite qual o valor em Celsius. Pode ser um valor positivo ou negativo.');
   bot.on('text', async ctx =>{
-    var celsius = ctx.update.message.text;
-    var valor = celsius.replace(/[^0-9,-]/g,'');
-    var calculo = (((valor)*9/5) + 32);
-    ctx.reply((calculo)+"°F");
-    var celsius = 0;
-    var calculo = 0;
+    celsiusParaFahrenheit = ctx.update.message.text;
+    ctx.reply((celsiusParaFahrenheit) + "°F");
     await ctx.reply("Volte para a /lista");
   });
 });
