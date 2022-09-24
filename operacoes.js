@@ -1,2 +1,0 @@
-//Conversões
-//Celsius Para Fahrenheit

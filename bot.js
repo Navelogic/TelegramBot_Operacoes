@@ -5,13 +5,15 @@ const bot = new Telegraf(env.token);
 
 // Ação quando o USER inicia o BOT
 bot.start(async ctx =>{
-  //Capturando dados do USER
+  // Capturando dados do USER
   const nome = ctx.update.message.from.first_name;
   const idUser = ctx.update.message.from.id;
   const userName = ctx.update.message.from.username;
   const lang = ctx.update.message.from.language_code;
+  
+  // Tratando idioma do USER
   if(lang != "pt-br"){
-    ctx.replyWithHTML (`Sorry ${userName}. We do not currently support your language.`);
+    ctx.replyWithHTML (`Sorry <b>${userName}</b>. We do not currently support your language.`);
   } else {
   await ctx.replyWithHTML(`Olá <b>${userName}</b>. Eu sou o <b>CALCULATOR</b>, um bot de formas matemáticas!
 
@@ -31,6 +33,11 @@ ctx.replyWithHTML(`
 `);
 });
 
+function celsiusParaFahrenheit (celsius) {
+  let valor = celsius.replace(/[^0-9,-]/g,'');
+  let calculo = (((valor)*9/5) + 32);
+  return calculo;
+};
 
 
 
