@@ -113,19 +113,16 @@ ctx.replyWithHTML(`
 // Operações
 
 // Celsius Para Fahrenheit
-function celsiusParaFahrenheit (celsius) {
-  let valor = celsius.replace(/[^0-9,-]/g,'');
-  let calculo = (((valor)*9/5) + 32);
-  return calculo;
-};
 
 bot.hears(/Celsius_Para_Fahrenheit/i, async ctx => {
   await ctx.reply('Digite qual o valor em Celsius. Pode ser um valor positivo ou negativo.');
-  bot.on('text', async ctx =>{
-    celsiusParaFahrenheit = ctx.update.message.text;
-    ctx.reply((celsiusParaFahrenheit) + "°F");
-    await ctx.reply("Volte para a /lista");
-  });
+  bot.on('text', ctx => {
+      let celsius = ctx.update.message.text;
+      let valor = celsius.replace(/[^0-9,-]/g,'');
+      let calculo = (((valor)*9/5) + 32);
+      ctx.replyWithHTML(`${calculo}°F`);
+      ctx.reply("Volte para a /lista");
+    });
 });
 
 //Fahrenheit para Celsius
@@ -141,10 +138,6 @@ bot.hears('/Fahrenheit_Para_Celsius', async ctx =>{
     
    });
   });
-
-
-
-
 
 
 
