@@ -122,6 +122,7 @@ bot.hears(/Celsius_Para_Fahrenheit/i, async ctx => {
       let calculo = (((valor)*9/5) + 32);
       ctx.replyWithHTML(`${calculo}°F`);
       ctx.reply("Volte para a /lista");
+      ctx.match[0];
     });
 });
 
